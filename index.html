@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Svadba – Seating Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>Seating Planner</h1>
+    </div>
+    <div class="topbar-right">
+      <input id="search" type="search" placeholder="Find a guest…" autocomplete="off" />
+      <label class="zoom" title="Zoom">
+        <span>Zoom</span>
+        <input id="zoom" type="range" min="0.5" max="2" step="0.05" value="1" />
+        <button id="zoom-fit" class="btn btn-small">Fit</button>
+      </label>
+      <div class="count-badge" title="Total guests entered">
+        <span id="guest-count">0</span>
+        <span class="count-label">guests</span>
+      </div>
+      <button id="btn-import" class="btn">Import</button>
+      <button id="btn-export" class="btn btn-primary">Export .xlsx</button>
+      <button id="btn-clear" class="btn btn-danger" title="Remove all guests">Clear</button>
+      <input id="file-input" type="file" accept=".xlsx,.xls,.csv" hidden />
+    </div>
+  </header>
+
+  <main class="workspace" id="workspace">
+    <div class="plan-scale" id="plan-scale">
+      <div class="plan" id="plan"></div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="lib/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
